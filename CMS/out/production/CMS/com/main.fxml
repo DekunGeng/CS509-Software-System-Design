@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.MainController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-border-color: #000;">
+         <children>
+            <DatePicker fx:id="startDay" layoutX="3.0" layoutY="84.0" />
+            <DatePicker fx:id="endDay" layoutX="3.0" layoutY="139.0" />
+            <Text layoutX="14.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Day" />
+            <Text layoutX="13.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Day" />
+            <Text layoutX="13.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From Time" />
+            <Text layoutX="13.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Time" />
+            <TextField fx:id="name" layoutX="3.0" layoutY="314.0" prefHeight="27.0" prefWidth="194.0" />
+            <Text layoutX="14.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <ChoiceBox fx:id="duration" layoutX="3.0" layoutY="375.0" prefHeight="27.0" prefWidth="194.0" />
+            <Text layoutX="14.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" />
+            <Button layoutX="71.0" layoutY="422.0" mnemonicParsing="false" onAction="#onCreate" text="Create" />
+            <TextField fx:id="fromTime" layoutX="4.0" layoutY="198.0" prefHeight="27.0" prefWidth="194.0" />
+            <TextField fx:id="endTime" layoutX="3.0" layoutY="256.0" prefHeight="27.0" prefWidth="194.0" />
+            <Text layoutX="28.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Zone">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ListView fx:id="cals" layoutX="200.0" prefHeight="600.0" prefWidth="200.0" />
+      <AnchorPane layoutX="400.0" prefHeight="600.0" prefWidth="400.0" style="-fx-border-color: #000;">
+         <children>
+            <Text layoutX="22.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration:" />
+            <Text layoutX="22.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time From:" />
+            <Text layoutX="22.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day From:" />
+            <Text fx:id="nameText" layoutX="149.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar" textAlignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fx:id="endTimeText" layoutX="220.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text layoutX="190.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
+            <Text fx:id="fromTimeText" layoutX="100.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="durationText" layoutX="100.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <ListView fx:id="availDay" layoutX="100.0" layoutY="53.0" prefHeight="87.0" prefWidth="235.0" />
+            <DatePicker fx:id="addDayFrom" layoutX="29.0" layoutY="266.0" prefHeight="27.0" prefWidth="140.0" />
+            <DatePicker fx:id="addDayTo" layoutX="214.0" layoutY="266.0" prefHeight="27.0" prefWidth="140.0" />
+            <Text layoutX="21.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Day" textAlignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text layoutX="187.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
+            <Button layoutX="163.0" layoutY="315.0" mnemonicParsing="false" onAction="#onAddDay" text="Add Day" />
+            <Text layoutX="21.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Meeting" textAlignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="meetingDay" layoutX="57.0" layoutY="402.0" prefHeight="27.0" prefWidth="140.0" />
+            <TextField fx:id="meetingFromTime" layoutX="58.0" layoutY="436.0" prefHeight="27.0" prefWidth="140.0" />
+            <Text layoutX="14.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+            <Text layoutX="16.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
+            <Text layoutX="209.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+            <TextField fx:id="meetingToTime" layoutX="230.0" layoutY="436.0" prefHeight="27.0" prefWidth="140.0" />
+            <Text layoutX="14.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Host" />
+            <TextField fx:id="hoster" layoutX="58.0" layoutY="471.0" prefHeight="27.0" prefWidth="140.0" />
+            <Button layoutX="149.0" layoutY="522.0" mnemonicParsing="false" onAction="#onAddMeeting" text="Add Meeting" />
+         </children></AnchorPane>
+      <ListView fx:id="meetingList" layoutX="800.0" layoutY="1.0" prefHeight="299.0" prefWidth="500.0" />
+      <AnchorPane layoutX="799.0" layoutY="301.0" prefHeight="294.0" prefWidth="500.0">
+         <children>
+            <Text layoutX="110.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Host:" />
+            <Text layoutX="110.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day:" />
+            <Text layoutX="110.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time:" />
+            <Text layoutX="191.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Info" textAlignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fx:id="organizerText" layoutX="180.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="T" />
+            <Text fx:id="meetingDayText" layoutX="180.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="T" />
+            <Text fx:id="meetingStartTimeText" layoutX="180.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12:00:00" />
+            <Text layoutX="255.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+            <Text fx:id="meetingEndTimeText" layoutX="281.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12:00:00" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
